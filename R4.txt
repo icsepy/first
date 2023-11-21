@@ -1,0 +1,65 @@
+R4-exits
+
+stdio, stdlib, unistd, signal, sys/types, sys/wait, pwd
+
+void sigalrm(){
+struct passwd *pwd=getpwuid(0);
+pwd->pw_name
+}
+
+int sleep1(unsigned int nsecs){
+if(signal(SIGALRM, sigalrm)==SIG_ERR)
+alarm(nsecs);
+pause()
+return(alarm(0));
+}
+void print_status(int status, int *a);
+
+void pr_exit(int status){
+if(WIFEXITED(status)) === normal termination
+}
+
+normal termination
+if(pid==0) exit(0)
+if(wait(&status)!=pid)
+error
+print_status(status, &childProgs)
+
+pr_exit(status)
+
+
+abnormal termination
+if(pid==0) abort();
+
+sleep1(1)
+exit(0)
+
+
+R4-fcfs+sjf
+
+struct Process{int id, arr_time;}
+void child_process(int id){
+child running
+sleep(3)
+child finished
+exit(0) }
+
+main(){
+pid_t pid; int n;
+struct Process processes[n];
+
+processes[i].id and the processes[i].arr_time
+sort according to time
+
+
+if(pid==0)
+child_process(processes[i].id)
+else
+wait(NULL)
+____________________________________________________
+sjf needs burst time addition
+sort in accordance to burst time
+if(pid==0)
+child_process(processes[i].id)
+else
+wait(NULL)

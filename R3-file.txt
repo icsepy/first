@@ -1,0 +1,27 @@
+R3-file
+"""stdio
+stdlib
+sys/types
+unistd
+sys/wait"""
+
+main(){
+int pid=fork();
+if(pid>0){Parent}
+else if(pid==0) {Child}
+else {Failed}
+
+pid_t p=getpid();
+pid_t c1=fork();
+if(c1==0){c1 forked}
+
+
+FILE *file = fopen("file.txt","w");
+fprintf(file, 'text');
+fclose(file);
+
+char *args[] = {"cat", "file.txt", NULL};
+execvp("cat",args);
+
+waitpid(child, NULL,0);
+
