@@ -1,0 +1,40 @@
+R6
+
+double time=0.0;
+clock_t start =clock();
+
+
+clock_t end = clock();
+time+=end-start/CLOCKS_PER_SEC
+_____________________________________
+
+int shared=10;
+sem_t s;
+
+main(){
+sem_init(&s,0,1);
+pthread_t t1,t2;
+pthread_create(&t1, NULL,f1,NULL);
+pthread_create(&t2, NULL,f2,NULL);
+pthread_join(t1,NULL);
+pthread_join(t2,NULL);
+}
+_____________________________________
+buffer[5]
+
+produce item
+sem_wait(&empty)            sem_wait(&full)
+sem_wait(&mutex)            sem_wait(&mutex)
+
+place item in array
+sem_post(&mutex) and rev
+sem_post(&full) and rev
+
+pthread_exit(NULL)
+
+pthread_t prod, cons
+sem_init(&empty, 0, buffer size)
+sem_init(&full, 0,0);
+sem_init(&mutex, 0, 1);
+
+create producer and consumer thread and join them 
